@@ -1,0 +1,21 @@
+<web-app>
+    <servlet>
+        <servlet-name>jsp</servlet-name>
+        <servlet-class>org.apache.jasper.servlet.JspServlet</servlet-class>
+        <init-param>
+            <param-name>JspFile</param-name>
+            <param-value>/WEB-INF/jsp/</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>jsp</servlet-name>
+        <url-pattern>*.jsp</url-pattern>
+    </servlet-mapping>
+</web-app>
+
+<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+    <property name="prefix" value="/WEB-INF/jsp/" />  <!-- Đường dẫn đến thư mục JSP -->
+    <property name="suffix" value=".jsp" />            <!-- Phần mở rộng của JSP -->
+</bean>
